@@ -1,13 +1,9 @@
-<script setup>
-let count = $ref(0)
+<script setup lang="ts">
+import {useCounterStore} from '../stores/counter'
 
-console.log(count)
-
-function increment() {
-  count++
-}
+const store = useCounterStore()
 </script>
 
 <template>
-  <button @click="increment">{{ count }}</button>
+  <button @click="store.increment">{{ store.count }}</button>
 </template>
